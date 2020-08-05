@@ -1,0 +1,32 @@
+/* ============================== Constants ========================= */
+
+:root {
+  --brand-primary: #3756D2;
+  --brand-primary-dark: #2D4CC8;
+
+  --brand-secondary: #34D1BF;
+
+  --brand-white: #FFF;
+  --brand-grey-30: #EFEFEF;
+  --brand-grey-60: #B8B8B8;
+  --brand-black: #111;
+}
+
+/* ================================================================== */
+
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-weight: 500;
+}
+
+a {
+  color: var(--brand-primary-dark);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

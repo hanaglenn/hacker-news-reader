@@ -32,18 +32,17 @@ export default function StoryList() {
 
   return inited ?
   (
-    <ul className="story-list">
-      <InfiniteScroll
-        pageStart={0}
-        loadMore={fetchStories}
-        hasMore={true}
-        loader={<Spinner key={Date.now()} />}
-      >
-        {stories.map(storyId => 
-          <StoryListItem key={storyId} id={storyId} storyService={storyService} />
-        )}
-      </InfiniteScroll>
-    </ul>
+    <InfiniteScroll
+      element="ul"
+      className="story-list"
+      loadMore={fetchStories}
+      hasMore={true}
+      loader={<Spinner key={Date.now()} />}
+    >
+      {stories.map(storyId => 
+        <StoryListItem key={storyId} id={storyId} storyService={storyService} />
+      )}
+    </InfiniteScroll>
   ) : (
     <Spinner />
   );

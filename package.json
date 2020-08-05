@@ -2,10 +2,10 @@
   "name": "hacker-news-reader",
   "version": "1.0.0",
   "description": "A sample project that creates a website for reading Hacker News.",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
-    "start": "parcel ./index.html",
-    "build": "parcel build ./index.html",
+    "start": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,8 +18,15 @@
   "bugs": {
     "url": "https://github.com/hanaglenn/hacker-news-reader/issues"
   },
-  "homepage": "https://github.com/hanaglenn/hacker-news-reader#readme",
+  "homepage": "https://github.com/hanaglenn/hacker-news-reader",
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "@types/react": "^16.9.44",
+    "@types/react-dom": "^16.9.8",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }

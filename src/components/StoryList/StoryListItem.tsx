@@ -11,11 +11,22 @@ type Props = {
 
 export default function StoryListItem({ id, storyService }: Props) {
   const [ story, setStory ] = useState<Story>();
+  const [ error, setError ] = useState<string>();
+
   useEffect(() => {
     storyService.getStory(id).then((story) => {
       setStory(story);
+    }).catch((errorMessage) => {
+      const error = `Could not find story with id ${id}: ${errorMessage}`;
+      console.warn(error);
+      setError(error);
     });
   }, []);
+
+  // Don't render this item if we couldn't properly fetch it.
+  if (error) {
+    return null;
+  }
 
   return (
     <li key={id}>

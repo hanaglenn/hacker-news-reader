@@ -45,6 +45,9 @@ export class StoryService {
     return new Promise((resolve, reject) => {
       fetch(`https://hacker-news.firebaseio.com/v0/item/${storyId}.json`).then((response) => {
         response.json().then((story) => {
+          if (!story) {
+            throw new Error('Story does not exist.');
+          }
           const { title, by, time, url } = story;
           const ourStory: Story = {
             id: storyId,
@@ -55,7 +58,7 @@ export class StoryService {
           };
           resolve(ourStory);
         }).catch((error) => {
-          throw new Error(`Error parsing response: ${error}`);
+          reject(`Error parsing response: ${error}`);
         });
       }).catch((error) => {
         reject(`Error fetching story ${storyId}: ${error}`);

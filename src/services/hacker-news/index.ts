@@ -1,4 +1,4 @@
-import { Story, StoryId } from './types/Story';
+import { Story, StoryId } from '../../types/Story';
 
 import { getNextChunk } from '../utils/get-next-chunk';
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { StoryService } from '../../services/hacker-news/index';
-import { Story, StoryId } from '../../services/hacker-news/types/Story';
+import { Story, StoryId } from '../../types/Story';
 import Spinner from '../Spinner/index';
 
 type Props = {

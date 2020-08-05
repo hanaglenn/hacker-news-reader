@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { StoryService } from '../../services/hacker-news/index';
-import { StoryId } from '../../services/hacker-news/types/Story';
+import { StoryId } from '../../types/Story';
 import StoryListItem from './StoryListItem';
 
 import './story-list.css';

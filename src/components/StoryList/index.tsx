@@ -9,6 +9,7 @@ import Spinner from '../Spinner/index';
 import './story-list.css';
 
 const STORY_CHUNK_SIZE = 30;
+const LOAD_MORE_PIXELS_FROM_BOTTOM = 0;
 
 export default function StoryList() {
   const [ storyService ] = useState<StoryService>(new StoryService());
@@ -16,7 +17,6 @@ export default function StoryList() {
   const [ inited, setInited ] = useState<boolean>(false);
 
   const fetchStories = () => {
-    console.log('fetching stories');
     storyService.getNextStories(STORY_CHUNK_SIZE).then((moreStories) => {
       const newStories = stories.concat(moreStories);
       setStories(newStories);
@@ -38,6 +38,7 @@ export default function StoryList() {
       loadMore={fetchStories}
       hasMore={true}
       loader={<Spinner key={Date.now()} />}
+      threshold={LOAD_MORE_PIXELS_FROM_BOTTOM}
     >
       {stories.map(storyId => 
         <StoryListItem key={storyId} id={storyId} storyService={storyService} />

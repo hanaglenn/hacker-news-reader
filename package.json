@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/hanaglenn/hacker-news-reader",
   "devDependencies": {
-    "@types/react-infinite-scroll-component": "^4.2.5",
+    "@types/react-infinite-scroller": "^1.2.1",
     "parcel-bundler": "^1.12.4",
     "typescript": "^3.9.7"
   },
@@ -29,7 +29,7 @@
     "@types/react-dom": "^16.9.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-infinite-scroll-component": "^5.0.5"
+    "react-infinite-scroller": "^1.2.4"
   },
   "browserslist": [
     "last 1 Chrome version"

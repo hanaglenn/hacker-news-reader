@@ -1,0 +1,13 @@
+ul.story-list {
+  padding: 0;
+  list-style: none;
+}
+
+ul.story-list li {
+  margin-bottom: 1.5rem;
+}
+
+ul.story-list li span.small {
+  font-size: .9rem;
+  opacity: .9;
+}

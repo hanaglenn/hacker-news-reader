@@ -8,7 +8,7 @@ import Spinner from '../Spinner/index';
 
 import './story-list.css';
 
-const STORY_CHUNK_SIZE = 15;
+const STORY_CHUNK_SIZE = 25;
 
 /*
  * This is set to load when the bottom of the page is hit,
@@ -18,12 +18,22 @@ const STORY_CHUNK_SIZE = 15;
 const LOAD_MORE_PIXELS_FROM_BOTTOM = 0;
 
 export default function StoryList() {
-  const [ storyService ] = useState<StoryService>(new StoryService());
+  const [ storyService ] = useState<StoryService>(new StoryService(STORY_CHUNK_SIZE));
   const [ stories, setStories ] = useState<StoryId[]>([]);
   const [ inited, setInited ] = useState<boolean>(false);
+  const [ hasMore, setHasMore ] = useState<boolean>(true);
 
   const fetchStories = () => {
-    storyService.getNextStories(STORY_CHUNK_SIZE).then((moreStories) => {
+    // The InfiniteScroll should also handle this, but just in case.
+    if (!hasMore) {
+      return;
+    }
+
+    storyService.getNextStories().then((moreStories) => {
+      // This chunk was incomplete, which means there won't be any beyond it.
+      if (moreStories && moreStories.length < STORY_CHUNK_SIZE) {
+        setHasMore(false);
+      }
       const newStories = stories.concat(moreStories);
       setStories(newStories);
     });
@@ -41,7 +51,7 @@ export default function StoryList() {
       element="ul"
       className="story-list"
       loadMore={fetchStories}
-      hasMore={true}
+      hasMore={hasMore}
       loader={<Spinner key={Date.now()} />}
       threshold={LOAD_MORE_PIXELS_FROM_BOTTOM}
     >

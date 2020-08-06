@@ -1,8 +1,11 @@
-export function getNextChunk<T>(iterator: Iterator<T>, max: number): Promise<T[]> {
+export async function getNextChunk<T>(iterable: AsyncIterator<T>, max: number): Promise<T[]> {
   const chunk = [];
   for (let i = 0; i < max; i++) {
-    const item = iterator.next().value;
-    chunk.push(item);
+    const next = await iterable.next();
+    if (next.done) {
+      break;
+    }
+    chunk.push(next.value);
   }
-  return Promise.resolve(chunk);
+  return chunk;
 }

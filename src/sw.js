@@ -59,7 +59,7 @@ self.addEventListener('fetch', async (event) => {
     }
 
     if (response) {
-      console.debug(`[A Service Worker] Caching URL: ${url}`);
+      console.debug(`[Service Worker] Caching URL: ${url}`);
       await cache.put(event.request, response.clone());
       return response;
     } else {

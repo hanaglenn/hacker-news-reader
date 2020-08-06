@@ -8,7 +8,13 @@ import Spinner from '../Spinner/index';
 
 import './story-list.css';
 
-const STORY_CHUNK_SIZE = 30;
+const STORY_CHUNK_SIZE = 15;
+
+/*
+ * This is set to load when the bottom of the page is hit,
+ * as per the requirements, but can be increased in order to
+ * more eagerly load additional stories.
+ */
 const LOAD_MORE_PIXELS_FROM_BOTTOM = 0;
 
 export default function StoryList() {
@@ -24,7 +30,6 @@ export default function StoryList() {
   }
 
   useEffect(() => {
-    // Init the story service and grab the first set of stories.
     storyService.init().then(() => {
       setInited(true);
     });

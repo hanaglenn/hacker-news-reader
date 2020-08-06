@@ -10,7 +10,9 @@ export default function Root() {
   return (
     <>
       <Header />
-      <StoryList />
+      <main>
+        <StoryList />
+      </main>
     </>
   );
 }

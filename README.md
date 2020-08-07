@@ -1,4 +1,4 @@
-# Hacker News Reacder
+# Hacker News Reader
 
 This application displays the most recent stories from Hacker News. It reads story lists and details from the [Hacker News API](https://github.com/HackerNews/API).
 

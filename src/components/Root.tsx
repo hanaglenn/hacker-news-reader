@@ -9,7 +9,7 @@ import './root.css';
 export default function Root() {
   return (
     <>
-      <Header />
+      <Header title="Hacker News" />
       <main>
         <StoryList />
       </main>

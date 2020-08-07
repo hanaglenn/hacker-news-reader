@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 
-import { StoryService } from '../../services/hacker-news/index';
+import StoryService from '../../services/hacker-news/StoryService';
 import { StoryId } from '../../types/Story';
 import StoryListItem from './StoryListItem';
 import Spinner from '../Spinner/index';

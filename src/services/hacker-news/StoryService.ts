@@ -52,7 +52,7 @@ async function* storyIterator(initialList: StoryId[]): AsyncIterator<StoryId> {
   }
 }
 
-export class StoryService {
+class StoryService {
   storyIds: StoryId[];
   iterator?: AsyncIterator<StoryId>;
   chunkSize: number;
@@ -106,3 +106,5 @@ export class StoryService {
     return ourStory;
   }
 }
+
+export default StoryService;

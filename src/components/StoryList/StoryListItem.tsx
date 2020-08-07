@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { StoryService } from '../../services/hacker-news/index';
+import { StoryService } from '../../services/hacker-news/StoryService';
 import { Story, StoryId } from '../../types/Story';
 import Spinner from '../Spinner/index';
 

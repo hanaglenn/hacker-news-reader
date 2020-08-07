@@ -6,7 +6,8 @@
   "scripts": {
     "start": "parcel ./src/index.html",
     "build": "parcel build ./src/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose",
+    "test:watch": "jest --watch --verbose"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,15 @@
   },
   "homepage": "https://github.com/hanaglenn/hacker-news-reader",
   "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
     "@types/react-infinite-scroller": "^1.2.1",
+    "babel-jest": "^26.2.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest": "^26.2.2",
     "parcel-bundler": "^1.12.4",
     "typescript": "^3.9.7"
   },
@@ -32,6 +41,15 @@
     "react-infinite-scroller": "^1.2.4"
   },
   "browserslist": [
-    "last 1 Chrome version"
-  ]
+    "last 1 Chrome version",
+    "last 1 Firefox version"
+  ],
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>tst/configure.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(css)$": "<rootDir>/tst/mocks/css.js"
+    }
+  }
 }

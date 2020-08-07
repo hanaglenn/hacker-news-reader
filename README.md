@@ -4,7 +4,7 @@ This application displays the most recent stories from Hacker News. It reads sto
 
 It leverages the [react-infinite-scroller](https://www.npmjs.com/package/react-infinite-scroller) module for infinite scrolling. This lightweight, heavily used, and tested module gives us scrolling with minimal bundle impact.
 
-Finally, a Service Worker whose code is in `sw.js` is enabling offline capabilities. 
+Finally, a Service Worker, the code for which is in `sw.js`, is enabling offline capabilities. 
 
 ## Run the app
 
@@ -36,9 +36,11 @@ This application is bundled using [Parcel](https://parceljs.org/), a minimal con
 
 ### Service Worker
 
-While actively developing the Service Worker, you will want to change some settings in your browser.
+While actively developing the Service Worker you will want to change some settings in your browser.
 
 In **Chrome**, open your Console and go to the Application > Service Workers section. Check the 'Update on reload' box so that the service worker is refreshed on each page reload. This will allow you to see and test your changes as you develop.
+
+In **Firefox**, open `about:debugging` and unregister the service worker to force it to re-initialize on the next page load.
 
 ### Unit tests
 

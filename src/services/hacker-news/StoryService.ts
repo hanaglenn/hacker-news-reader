@@ -2,7 +2,7 @@ import { Story, StoryId } from '../../types/Story';
 
 import { getNextChunk } from '../utils/get-next-chunk';
 
-const STORY_TYPE = "story";
+const STORY_TYPE = 'story';
 
 // This function will return the next valid story id,
 // searching into the past from the 'fromId'.

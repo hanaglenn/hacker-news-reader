@@ -6,7 +6,7 @@ const counter = async function* (count) {
   }
 };
 
-describe('get-next-chuck util', () => {
+describe('get-next-chunk util', () => {
   it('should return empty elements from empty iterable', (done) => {
     const iterator = counter(0);
     getNextChunk(iterator, 3).then(results => {

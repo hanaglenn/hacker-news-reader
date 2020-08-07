@@ -47,7 +47,7 @@ self.addEventListener('fetch', async (event) => {
     let response;
     try {
       response = await fetch(event.request);
-      if(!response.ok) {
+      if (!response.ok) {
         throw new Error('Non-ok response.');
       }
     } catch(error) {
